@@ -16,7 +16,7 @@ exports.connectToMongoDB = exports.User = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 require("dotenv/config");
 const userSchema = new mongoose_1.default.Schema({
-    email: { type: String, required: true },
+    email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
     role: { type: Number, required: true, default: 0 },
 });

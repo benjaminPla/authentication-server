@@ -3,7 +3,7 @@ import { IUser } from "./interfaces";
 import "dotenv/config";
 
 const userSchema: mongoose.Schema<IUser> = new mongoose.Schema<IUser>({
-  email: { type: String, required: true },
+  email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   role: { type: Number, required: true, default: 0 },
 });
